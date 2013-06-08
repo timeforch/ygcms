@@ -11,13 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608031945) do
+ActiveRecord::Schema.define(:version => 20130608063016) do
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "login_name",   :limit => 20,                    :null => false
+    t.string   "user_name",    :limit => 20
+    t.string   "password",     :limit => 32,                    :null => false
+    t.boolean  "enabled",                    :default => false, :null => false
+    t.string   "phone_number", :limit => 11
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
   end
 
 end

@@ -1,13 +1,12 @@
 <h1>Listing users</h1>
-<script type="text/javascript">
-    Ext.onReady(function() { 
-Ext.Msg.alert('提示', '逗号分隔参数列表'); //这种方式非常常见的 
-}); 
-</script>
+
 <table>
   <tr>
-    <th>Name</th>
+    <th>Login name</th>
+    <th>User name</th>
     <th>Password</th>
+    <th>Enabled</th>
+    <th>Phone number</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +14,11 @@ Ext.Msg.alert('提示', '逗号分隔参数列表'); //这种方式非常常见�
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
+    <td><%= user.login_name %></td>
+    <td><%= user.user_name %></td>
     <td><%= user.password %></td>
+    <td><%= user.enabled %></td>
+    <td><%= user.phone_number %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

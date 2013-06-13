@@ -13,6 +13,6 @@ if you first time to run this project ,you need to do the list steps
 Extjs4.2.1 with Rails3
 
 rake g scaffold user login_name:string user_name:string password:string enabled:boolean phone_number:string
-
+=============
 
 

@@ -1,0 +1,14 @@
+development:
+  redis.host : 127.0.0.1
+  redis.port : 6379
+  service.zookeeper.address : 192.168.211.231
+  service.zookeeper.port : 2181
+  service.interface.list :
+    #- com.yougou.pc.api.ICommodityBaseApiService
+    - com.yougou.cms.api.ICMSApi
+test:
+  service.zookeeper.address : 192.168.211.231
+  service.zookeeper.port : 2181
+production:
+  service.zookeeper.address : 192.168.211.231
+  service.zookeeper.port : 2181

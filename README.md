@@ -1,4 +1,8 @@
 ygcms
+dependency:
+
+gem 'zookeeper'
+
 =====
 if you first time to run this project ,you need to do the list steps
 

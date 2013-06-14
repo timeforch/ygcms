@@ -6873,3 +6873,341 @@ Served asset /extjs4/resources/themes/images/default/sizer/se-handle.gif - 304 N
 
 Started GET "/assets/extjs4/resources/themes/images/default/sizer/sw-handle.gif" for 127.0.0.1 at 2013-06-08 18:19:48 +0800
 Served asset /extjs4/resources/themes/images/default/sizer/sw-handle.gif - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-13 15:59:01 +0800
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 361ms (Views: 360.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-13 15:59:01 +0800
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2013-06-13 15:59:01 +0800
+Served asset /app.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/extjs4/resources/css/ext-all.css?body=1" for 127.0.0.1 at 2013-06-13 15:59:01 +0800
+Served asset /extjs4/resources/css/ext-all.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-13 15:59:01 +0800
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/extjs4/ext-all-debug.js?body=1" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /extjs4/ext-all-debug.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/app/view/Viewport.js?_dc=1371110342501" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/view/Viewport.js - 200 OK (33ms)
+
+
+Started GET "/assets/app/controller/Users.js?_dc=1371110342501" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/controller/Users.js - 200 OK (72ms)
+
+
+Started GET "/assets/app/view/user/List.js?_dc=1371110342640" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/view/user/List.js - 200 OK (26ms)
+
+
+Started GET "/assets/app/model/User.js?_dc=1371110342639" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/model/User.js - 200 OK (13ms)
+
+
+Started GET "/assets/app/view/user/Form.js?_dc=1371110342640" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/view/user/Form.js - 200 OK (13ms)
+
+
+Started GET "/assets/app/store/Users.js?_dc=1371110342640" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /app/store/Users.js - 200 OK (36ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif - 304 Not Modified (4ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/loading.gif" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Served asset /extjs4/resources/themes/images/default/grid/loading.gif - 304 Not Modified (3ms)
+
+
+Started GET "/users.json?_dc=1371110342945&page=1&start=0&limit=25" for 127.0.0.1 at 2013-06-13 15:59:02 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"_dc"=>"1371110342945", "page"=>"1", "start"=>"0", "limit"=>"25"}
+  [1m[36mUser Load (105.3ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+Completed 200 OK in 433ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-13 16:45:19 +0800
+
+ActionController::RoutingError (undefined method `config' for Rails::Application:Class):
+  app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/index_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/minxr/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (13.8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (33.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20130608063016)
+Migrating to CreateSettings (20130613092148)
+  [1m[35m (143.0ms)[0m  CREATE TABLE `settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `var` varchar(255) NOT NULL, `value` text, `thing_id` int(11), `thing_type` varchar(30), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (220.5ms)[0m  [1mCREATE UNIQUE INDEX `index_settings_on_thing_type_and_thing_id_and_var` ON `settings` (`thing_type`, `thing_id`, `var`)[0m
+  [1m[35m (32.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130613092148')
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-14 10:33:36 +0800
+
+ActionController::RoutingError (undefined method `config' for Rails::Application:Class):
+  app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/index_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/minxr/.rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 267ms (Views: 266.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/extjs4/resources/css/ext-all.css?body=1" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /extjs4/resources/css/ext-all.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/extjs4/ext-all-debug.js?body=1" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /extjs4/ext-all-debug.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /app.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/app/view/Viewport.js?_dc=1371177286941" for 127.0.0.1 at 2013-06-14 10:34:46 +0800
+Served asset /app/view/Viewport.js - 200 OK (31ms)
+
+
+Started GET "/assets/app/controller/Users.js?_dc=1371177286941" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /app/controller/Users.js - 200 OK (61ms)
+
+
+Started GET "/assets/app/model/User.js?_dc=1371177287094" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /app/model/User.js - 200 OK (19ms)
+
+
+Started GET "/assets/app/view/user/Form.js?_dc=1371177287095" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /app/view/user/Form.js - 200 OK (20ms)
+
+
+Started GET "/assets/app/view/user/List.js?_dc=1371177287095" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /app/view/user/List.js - 200 OK (38ms)
+
+
+Started GET "/assets/app/store/Users.js?_dc=1371177287095" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /app/store/Users.js - 200 OK (16ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif - 304 Not Modified (5ms)
+
+
+Started GET "/users.json?_dc=1371177287525&page=1&start=0&limit=25" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"_dc"=>"1371177287525", "page"=>"1", "start"=>"0", "limit"=>"25"}
+  [1m[36mUser Load (23.6ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+Completed 200 OK in 380ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/loading.gif" for 127.0.0.1 at 2013-06-14 10:34:47 +0800
+Served asset /extjs4/resources/themes/images/default/grid/loading.gif - 304 Not Modified (13ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-14 10:35:42 +0800
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/extjs4/ext-all-debug.js?body=1" for 127.0.0.1 at 2013-06-14 10:35:42 +0800
+Served asset /extjs4/ext-all-debug.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/extjs4/resources/css/ext-all.css?body=1" for 127.0.0.1 at 2013-06-14 10:35:42 +0800
+Served asset /extjs4/resources/css/ext-all.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 10:35:42 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 10:35:42 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/app/view/Viewport.js?_dc=1371177343321" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/view/Viewport.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/controller/Users.js?_dc=1371177343321" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/controller/Users.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/model/User.js?_dc=1371177343422" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/model/User.js - 200 OK (5ms)
+
+
+Started GET "/assets/app/view/user/Form.js?_dc=1371177343423" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/view/user/Form.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/store/Users.js?_dc=1371177343424" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/store/Users.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/view/user/List.js?_dc=1371177343423" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /app/view/user/List.js - 200 OK (0ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /extjs4/resources/themes/images/default/grid/grid3-hd-btn.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/extjs4/resources/themes/images/default/grid/loading.gif" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Served asset /extjs4/resources/themes/images/default/grid/loading.gif - 304 Not Modified (0ms)
+
+
+Started GET "/users.json?_dc=1371177343632&page=1&start=0&limit=25" for 127.0.0.1 at 2013-06-14 10:35:43 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"_dc"=>"1371177343632", "page"=>"1", "start"=>"0", "limit"=>"25"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` 
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/extjs4/resources/css/ext-all.css?body=1" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /extjs4/resources/css/ext-all.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/extjs4/ext-all-debug.js?body=1" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /extjs4/ext-all-debug.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/app/view/Viewport.js?_dc=1371177389768" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/view/Viewport.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/controller/Users.js?_dc=1371177389769" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/controller/Users.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/view/user/List.js?_dc=1371177389826" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/view/user/List.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/model/User.js?_dc=1371177389826" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/model/User.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/view/user/Form.js?_dc=1371177389826" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/view/user/Form.js - 200 OK (0ms)
+
+
+Started GET "/assets/app/store/Users.js?_dc=1371177389827" for 127.0.0.1 at 2013-06-14 10:36:29 +0800
+Served asset /app/store/Users.js - 200 OK (0ms)
+
+
+Started GET "/users.json?_dc=1371177390006&page=1&start=0&limit=25" for 127.0.0.1 at 2013-06-14 10:36:30 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"_dc"=>"1371177390006", "page"=>"1", "start"=>"0", "limit"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+  [1m[36mUser Load (46.4ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

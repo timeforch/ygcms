@@ -1,4 +1,8 @@
 ygcms
+dependency:
+
+gem 'zookeeper'
+
 =====
 if you first time to run this project ,you need to do the list steps
 
@@ -8,6 +12,9 @@ if you first time to run this project ,you need to do the list steps
 
 2. rake db:migrate => to create table for your project
 
+3. rake sync_service_to_redis => to sync provider to redis
+
+4. rake methods => to list all methods of remote api ,need param,use demo:rake methods['com.yougou.cms.api.ICMSApi']
 
 ------
 Extjs4.2.1 with Rails3

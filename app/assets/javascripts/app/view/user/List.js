@@ -12,9 +12,22 @@ Ext.define('CMS.view.user.List',{
         ];
         //添加用户
          this.addUserButton = Ext.create('Ext.Button', {
-             text: 'Click me',
+             text: '获取商品url',
              handler: function() {
-                 alert('You clicked the button!');
+                 Ext.Ajax.request({
+                     url: '/get_full_url_by_commodity_no.json',
+                     headers: {
+                         'userHeader': 'userMsg'
+                     },
+                     params: { commodity_no:'99821137' },
+                     method: 'GET',
+                     success: function (response, options) {
+                         Ext.MessageBox.alert('成功', '从服务端获取结果: ' + response.responseText);
+                     },
+                     failure: function (response, options) {
+                         Ext.MessageBox.alert('失败', '请求超时或网络故障,错误编号：' + response.status);
+                     }
+                 });
              }
          });
         //删除用户

@@ -2,6 +2,9 @@ Cms::Application.routes.draw do
   get "index/index"
 
   resources :users
+
+  get 'get_full_url_by_commodity_no' => 'users#get_full_url_by_commodity_no'
+
   root to: 'index#index'
 
 

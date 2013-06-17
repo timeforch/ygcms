@@ -1,9 +1,9 @@
-require "#{Pathname.new(__FILE__).parent.parent}/zookeeper/registry_factory"
+#require "#{Pathname.new(__FILE__).parent.parent}/zookeeper/registry_factory"
+require File.expand_path('../../zookeeper/registry_factory', __FILE__)
 require 'redis'
 require 'uri'
 require 'json'
 task :sync_service_to_redis => :environment do
-
   factory = RegistryFactory.instance
   dobbo_root = factory.dobbo_root
   used_dubbo_service = CommonTools::Config.instance.get_config["service.interface.list"]

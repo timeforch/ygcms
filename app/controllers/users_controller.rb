@@ -1,5 +1,8 @@
+require File.expand_path('../../../lib/dubbo_service', __FILE__)
+
 class UsersController < ApplicationController
-  respond_to :js
+  include  DubboService
+  respond_to :json
   # GET /users
   # GET /users.json
   def index
@@ -79,5 +82,15 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_full_url_by_commodity_no
+    commodity_no = params[:commodity_no]
+    commodity_no ||= ""
+    url = "{result:success,msg:'no data'}"
+    if not commodity_no.empty?
+      url = DubboService::CMSApi.instance.get_full_commodity_page_url(commodity_no)
+    end
+    respond_with(url)
   end
 end

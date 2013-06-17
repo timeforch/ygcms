@@ -9,20 +9,21 @@ class HessianProxy
   include CommonTools
 
   def initialize
-    @redis = Redis.new(:host => CommonTools::Config.instance.get_config["redis.host"], :port => CommonTools::Config.instance.get_config["redis.port"])
+    @redis = Redis.new(:host => CommonTools::Config.instance.get_config["redis.host"],
+                       :port => CommonTools::Config.instance.get_config["redis.port"])
   end
 
   def get_proxy(service = "")
-    list = JSON.parse(@redis.get(service))
+    service_json = @redis.get(service)
+    list = JSON.parse(service_json ||= "[]")
     if list.empty?
       raise "no provider for service :#{service} be found !"
     end
      url = list[rand(list.size)].gsub("hessian","http").split("?")[0]
-    puts url
      Hessian2::HessianClient.new(url)
   end
 end
 
 if __FILE__ == $0
-  puts HessianProxy.new.get_proxy("com.yougou.cms.api.ICMSApi")
+  puts HessianProxy.new.get_proxy("com.yougou.cms.api.ICMSApi").getFullCommodityPageUrl("99821137");
 end

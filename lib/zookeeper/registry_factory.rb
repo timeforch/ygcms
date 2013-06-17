@@ -5,7 +5,7 @@ require 'zookeeper'
 require 'singleton'
 require 'yaml'
 require 'rails'
-require "#{File.dirname(__FILE__)}/common_tools"
+require File.expand_path("../common_tools",__FILE__)
 class RegistryFactory
   include Singleton
   include CommonTools

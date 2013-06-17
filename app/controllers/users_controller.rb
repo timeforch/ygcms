@@ -1,7 +1,6 @@
 require File.expand_path('../../../lib/dubbo_service', __FILE__)
 
 class UsersController < ApplicationController
-  include  DubboService
   respond_to :json
   # GET /users
   # GET /users.json
@@ -89,7 +88,7 @@ class UsersController < ApplicationController
     commodity_no ||= ""
     url = "{result:success,msg:'no data'}"
     if not commodity_no.empty?
-      url = DubboService::CMSApi.instance.get_full_commodity_page_url(commodity_no)
+      url = DubboService.instance.exec(DubboService::GetFullCommodityPageUrl,commodity_no)
     end
     respond_with(url)
   end

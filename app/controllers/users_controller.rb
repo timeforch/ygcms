@@ -1,4 +1,5 @@
 require File.expand_path('../../../lib/dubbo_service', __FILE__)
+require 'hessian2'
 
 class UsersController < ApplicationController
   respond_to :json
@@ -91,5 +92,12 @@ class UsersController < ApplicationController
       url = DubboService.instance.exec(DubboService::GetFullCommodityPageUrl,commodity_no)
     end
     respond_with(url)
+  end
+
+  def ruby_server
+    respond_to do |format|
+      send_data(Hessian2::HessianWriter.write("hello",type:'string'))
+    end
+
   end
 end

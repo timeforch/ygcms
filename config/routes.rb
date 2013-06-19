@@ -5,6 +5,7 @@ Cms::Application.routes.draw do
 
   get 'get_full_url_by_commodity_no' => 'users#get_full_url_by_commodity_no'
 
+  get 'ruby_server' => 'users#get_full_url_by_commodity_no'
   root to: 'index#index'
 
 

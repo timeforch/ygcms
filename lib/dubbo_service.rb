@@ -20,6 +20,6 @@ class DubboService
 end
 
 if __FILE__ == $0
-  puts DubboService.methods
+  #puts DubboService.methods
   puts DubboService.instance.exec(DubboService::GetFullCommodityPageUrl, '99821137')
 end

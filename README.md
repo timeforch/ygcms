@@ -18,6 +18,7 @@ if you first time to run this project ,you need to do the list steps
 
 4. rake methods => to list all methods of remote api ,need param,use demo:rake methods['com.yougou.cms.api.ICMSApi']
 
+5. you can run startup.sh to start app on 9080 port,or you can run command :rails s to start app on port 3000 directly
 ------
 Extjs4.2.1 with Rails3
 

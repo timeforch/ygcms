@@ -137,7 +137,7 @@ module ICMSApi
     SUCCESS = 0
 
     FIELDS = {
-      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::User}}
+      SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::STRUCT, :class => ::UserVo}}
     }
 
     def struct_fields; FIELDS; end
@@ -169,7 +169,7 @@ module ICMSApi
     SUCCESS = 0
 
     FIELDS = {
-      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::User}
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::UserVo}
     }
 
     def struct_fields; FIELDS; end

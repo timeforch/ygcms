@@ -6,7 +6,7 @@
 
 require 'thrift'
 
-class User
+class UserVo
   include ::Thrift::Struct, ::Thrift::Struct_Union
   LOGIN_NAME = 1
   USER_NAME = 2

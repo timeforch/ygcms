@@ -21,7 +21,7 @@ class CmsApiService
 
   def convert_model_to_vo(targetClassName,users)
     obj = Object.const_get(targetClassName)
-     props = obj.new.get_attr
+     props = get_attr(obj)
     users_vo = []
     users.each do |user|
       vo = obj.new
@@ -31,6 +31,14 @@ class CmsApiService
       users_vo << vo
     end
     return users_vo
+  end
+
+  def get_attr(targetClass)
+    arrs = []
+    targetClass::FIELDS.each_value.each do |map|
+      arrs << map[:name]
+    end
+    return arrs
   end
 
 end

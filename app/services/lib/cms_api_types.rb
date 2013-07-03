@@ -22,16 +22,6 @@ class UserVo  < MyObject
     ENABLED => {:type => ::Thrift::Types::BOOL, :name => 'enabled'}
   }
 
-
-  def get_attr
-    arrs = []
-    FIELDS.each_value.each do |map|
-       arrs << map[:name]
-    end
-    return arrs
-  end
-
-
   def struct_fields; FIELDS; end
 
   def validate
@@ -39,6 +29,8 @@ class UserVo  < MyObject
 
   ::Thrift::Struct.generate_accessors self
 end
+
+
 
 
 

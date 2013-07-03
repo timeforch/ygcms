@@ -3,10 +3,10 @@
 #
 # DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
 #
-
+require File.expand_path('../../my_object', __FILE__)
 require 'thrift'
 
-class UserVo
+class UserVo  < MyObject
   include ::Thrift::Struct, ::Thrift::Struct_Union
   LOGIN_NAME = 1
   USER_NAME = 2
@@ -22,6 +22,16 @@ class UserVo
     ENABLED => {:type => ::Thrift::Types::BOOL, :name => 'enabled'}
   }
 
+
+  def get_attr
+    arrs = []
+    FIELDS.each_value.each do |map|
+       arrs << map[:name]
+    end
+    return arrs
+  end
+
+
   def struct_fields; FIELDS; end
 
   def validate
@@ -29,4 +39,6 @@ class UserVo
 
   ::Thrift::Struct.generate_accessors self
 end
+
+
 

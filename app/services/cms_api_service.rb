@@ -1,4 +1,5 @@
 require File.expand_path('../users_service', __FILE__)
+require File.expand_path('../my_object', __FILE__)
 
 class CmsApiService
   def initialize()
@@ -7,7 +8,7 @@ class CmsApiService
 
   def getAllUsers
      user_service  = UsersService.new
-    return convert_model_to_vo(user_service.get_users)
+    return convert_model_to_vo("UserVo",user_service.get_users)
   end
 
   def getUserCount
@@ -18,15 +19,15 @@ class CmsApiService
 
 
 
-  def convert_model_to_vo(users)
+  def convert_model_to_vo(targetClassName,users)
+    obj = Object.const_get(targetClassName)
+     props = obj.new.get_attr
     users_vo = []
     users.each do |user|
-      vo = UserVo.new
-      vo.login_name = user.login_name
-      vo.user_name = user.user_name
-      vo.password = user.password
-      vo.enabled = user.enabled
-      vo.phone_number = user.phone_number
+      vo = obj.new
+      props.each do |prop|
+        obj.class_eval("vo.#{prop} = user.#{prop}")
+      end
       users_vo << vo
     end
     return users_vo

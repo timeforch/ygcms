@@ -20,8 +20,14 @@ Ext.define('CMS.controller.Users', {
             } ,
             'userform button[action=save]':{
                 click:this.updateUser
+            } ,
+            'userlist button[action=delete]':{
+                click: this.deleteUsers
             }
         });
+    },
+    deleteUsers:function(button){
+         console.log(button.up('panel'))
     },
     addUser:function(button){
         var view = Ext.widget('userform');

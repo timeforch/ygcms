@@ -26,6 +26,10 @@ Ext.define('CMS.view.user.Form', {
         xtype: 'textfield',
         name : 'phone_number',
         fieldLabel: '电话号码'
+      }, {
+          xtype: 'textfield',
+          name : 'enabled',
+          fieldLabel: '是否启用'
       }]
     }];
 

@@ -15,13 +15,19 @@ Ext.define('CMS.controller.Users', {
             'viewport > userlist': {
                 itemdblclick: this.editUser
             },
+            'userlist button[action=addNew]':{
+                click:this.addUser
+            } ,
             'userform button[action=save]':{
                 click:this.updateUser
             }
         });
     },
+    addUser:function(button){
+        var view = Ext.widget('userform');
+        view.show();
+    },
     editUser:function(grid,record){
-         console.log("双击"+record.get('user_name'))
         var view = Ext.widget('userform');
         view.down('form').loadRecord(record);
     },
@@ -31,9 +37,16 @@ Ext.define('CMS.controller.Users', {
             form   = win.down('form'),
             record = form.getRecord(),
             values = form.getValues();
-        record.set(values);
+        var formRecord = form.getRecord();
+        var store = this.getUsersStore();
+        if (formRecord) {
+            formRecord.set(values);
+        } else {
+            var user = Ext.create('CMS.model.User', values);
+            store.add(user);
+        }
         win.close();
-        this.getUsersStore().sync();
+        store.sync();
     }
 });
 

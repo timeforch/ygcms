@@ -11,7 +11,7 @@ Ext.define('CMS.view.user.List',{
             {header:"enabled" ,dataIndex:'enabled' ,flex:1}
         ];
         //添加用户
-         this.addUserButton = Ext.create('Ext.Button', {
+         this.geCommodityButton = Ext.create('Ext.Button', {
              text: '获取商品url',
              handler: function() {
                  Ext.Ajax.request({
@@ -30,6 +30,7 @@ Ext.define('CMS.view.user.List',{
                  });
              }
          });
+
         //删除用户
         this.delUserButton = Ext.create('Ext.Button', {
              text: 'Click me',
@@ -37,7 +38,10 @@ Ext.define('CMS.view.user.List',{
                  alert('You clicked the button!');
              }
          });
-        this.tbar = [this.addUserButton,this.delUserButton];
+        this.tbar = [{
+            text: '添加新用户',
+            action: 'addNew'
+        },this.delUserButton,this.geCommodityButton];
         this.callParent(arguments);
     }
 });

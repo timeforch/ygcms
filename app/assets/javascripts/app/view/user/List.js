@@ -25,6 +25,7 @@ Ext.define('CMS.view.user.List',{
                          Ext.MessageBox.alert('成功', '从服务端获取结果: ' + response.responseText);
                      },
                      failure: function (response, options) {
+                         log.console(response)
                          Ext.MessageBox.alert('失败', '请求超时或网络故障,错误编号：' + response.status);
                      }
                  });

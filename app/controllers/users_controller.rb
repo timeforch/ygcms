@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    user_service = UsersService.new
-    @users = user_service.get_users
+    @user_service = UsersService.new
+    @users = @user_service.get_users
     respond_with(@users) do |format|
       format.html # index.html.erb
       format.json
@@ -88,17 +88,18 @@ class UsersController < ApplicationController
   def get_full_url_by_commodity_no
     commodity_no = params[:commodity_no]
     commodity_no ||= ""
-    url = "{result:success,msg:'no data'}"
-    if not commodity_no.empty?
-      url = DubboService.instance.exec(DubboService::GetFullCommodityPageUrl,commodity_no)
+    url = "{result:'success',msg:'no data'}"
+    begin
+      if not commodity_no.empty?
+        @dubbo_service =  DubboService.new
+        url = @dubbo_service.exec(DubboService::GetFullCommodityPageUrl,commodity_no)
+      end
+    rescue Exception
+
+      url = "{result:'errors',msg:'call remote service fail#{ $! }'}"
     end
+
     respond_with(url)
   end
 
-  def ruby_server
-    respond_to do |format|
-      send_data(Hessian2::HessianWriter.write("hello",type:'string'))
-    end
-
-  end
 end

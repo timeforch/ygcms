@@ -5,7 +5,7 @@
 require File.expand_path('../hessian_proxy', __FILE__)
 
 class DubboService
-    include Singleton
+    #include Singleton
     GetFullCommodityPageUrl = 'getFullCommodityPageUrl'
 
     def initialize
@@ -21,5 +21,5 @@ end
 
 if __FILE__ == $0
   #puts DubboService.methods
-  puts DubboService.instance.exec(DubboService::GetFullCommodityPageUrl, '99821137')
+  puts DubboService.new.exec(DubboService::GetFullCommodityPageUrl, '99821137')
 end

@@ -1,12 +1,11 @@
 Cms::Application.routes.draw do
-  get "index/index"
+  #get "index/index"
 
   resources :users
 
   get 'get_full_url_by_commodity_no' => 'users#get_full_url_by_commodity_no'
 
-  get 'ruby_server' => 'users#get_full_url_by_commodity_no'
-  root to: 'index#index'
+  #root to: 'index#index'
 
 
   # The priority is based upon order of creation:

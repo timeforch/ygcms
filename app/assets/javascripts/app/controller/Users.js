@@ -14,6 +14,9 @@ Ext.define('CMS.controller.Users', {
         this.control({
             'viewport > userlist': {
                 itemdblclick: this.editUser
+            },
+            'userform button[action=save]':{
+                click:this.updateUser
             }
         });
     },
@@ -23,11 +26,11 @@ Ext.define('CMS.controller.Users', {
         view.down('form').loadRecord(record);
     },
     updateUser: function(button) {
+        console.log('click')
         var win    = button.up('window'),
             form   = win.down('form'),
             record = form.getRecord(),
             values = form.getValues();
-
         record.set(values);
         win.close();
         this.getUsersStore().sync();

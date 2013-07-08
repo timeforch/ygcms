@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    user_service = UserService.new
+    user_service = UsersService.new
     @users = user_service.get_users
     respond_with(@users) do |format|
       format.html # index.html.erb

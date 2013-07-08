@@ -5,14 +5,14 @@ require 'cms_api_types'
 require 'cms_api_constants'
 
 
-  port = ARGV[0] || 9090
+  port = ARGV[0] || 9898
 
-  transport = Thrift::FramedTransport.new(Thrift::Socket.new('localhost', port))
+  transport = Thrift::FramedTransport.new(Thrift::Socket.new('127.0.0.1', port))
   transport.open()
   protocol = Thrift::BinaryProtocol.new(transport)
   client = ICMSApi::Client.new(protocol)
   start = Time.now
-  (1..10).each do|i|
+  (1..100000).each do|i|
   puts "the #{i} times invoke "
   puts "beofre"
   puts client.getUserCount

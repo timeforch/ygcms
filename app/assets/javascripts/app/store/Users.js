@@ -33,7 +33,7 @@ Ext.define('CMS.store.Users', {
             console.log(arguments);
         },
         beforesync: function() {
-            console.log(arguments);
+           alert('ok')
         }
     }
 });

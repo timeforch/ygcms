@@ -27,7 +27,22 @@ Ext.define('CMS.controller.Users', {
         });
     },
     deleteUsers:function(button){
-         console.log(button.up('panel'))
+        var store = this.getUsersStore();
+         var grid = button.up('panel');
+        var selModel = grid.getSelectionModel() ;
+        var isGridSelected = selModel.hasSelection()
+        if (!isGridSelected) { //没有被选中
+            Ext.MessageBox.alert("注意","没有选择要删除的数据！") ;
+            return ;
+
+        }
+        var allSelected = selModel.getSelection()  ; //获取最后一个选择的一行的数据
+        allSelected.forEach(function(element, index, array){
+            store.remove(element);     store.sync();
+
+            //alert(element.get('id') +"->"+element.get('user_name'))
+        });
+
     },
     addUser:function(button){
         var view = Ext.widget('userform');

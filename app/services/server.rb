@@ -9,7 +9,7 @@ begin
   handler = CmsApiService.new
 
   processor = ICMSApi::Processor.new(handler)
-  transport = Thrift::ServerSocket.new('localhost', 9090)
+  transport = Thrift::ServerSocket.new('192.168.211.25', 9090)
 #transport = Thrift::NonblockingServer.new(transport)
   tFactory = Thrift::FramedTransportFactory.new()
   pFactory = Thrift::BinaryProtocolFactory.new()

@@ -7,7 +7,7 @@ require 'cms_api_constants'
 
   port = ARGV[0] || 9898
 
-  transport = Thrift::FramedTransport.new(Thrift::Socket.new('127.0.0.1', port))
+  transport = Thrift::FramedTransport.new(Thrift::Socket.new('10.10.10.244', port))
   transport.open()
   protocol = Thrift::BinaryProtocol.new(transport)
   client = ICMSApi::Client.new(protocol)

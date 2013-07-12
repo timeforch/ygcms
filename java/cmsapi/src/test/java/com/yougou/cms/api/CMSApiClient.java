@@ -24,7 +24,7 @@ public class CMSApiClient {
         transport =  new TFastFramedTransport(transport);
         //设置传输协议为TBinaryProtocol
         TProtocol protocol = new TBinaryProtocol(transport);
-//        Hello.Client client = new Hello.Client(protocol);
+//        Hello.com.yougou.cms.api.client.Client client = new Hello.com.yougou.cms.api.client.Client(protocol);
         transport.open();
 
         ICMSApi.Client client = new ICMSApi.Client(protocol);
@@ -35,4 +35,6 @@ public class CMSApiClient {
         }
         transport.close();
     }
+
+
 }

@@ -12,7 +12,7 @@ require 'cms_api_constants'
   protocol = Thrift::BinaryProtocol.new(transport)
   client = ICMSApi::Client.new(protocol)
   start = Time.now
-  (1..100000).each do|i|
+  (1..10000).each do|i|
   puts "the #{i} times invoke "
   puts "beofre"
   puts client.getUserCount

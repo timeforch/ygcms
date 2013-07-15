@@ -20,7 +20,7 @@ import java.util.List;
 public class CMSApiClient {
     public static void main(String[] args) throws TException {
         //设置调用的服务器为本地，端口为7911
-        TTransport transport = new TSocket("localhost", 9090);
+        TTransport transport = new TSocket("10.10.10.244", 9090);
         transport =  new TFastFramedTransport(transport);
         //设置传输协议为TBinaryProtocol
         TProtocol protocol = new TBinaryProtocol(transport);

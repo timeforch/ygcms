@@ -32,11 +32,12 @@ public class Client extends Thread{
     public static void main(String[] args) {
         System.out.println(args[0]+":"+args[1]+" "+args[2]);
         if (args == null || args.length < 3) {
-            System.out.println("参数不正确，正确的参数为host port ");
+            System.out.println("参数不正确，正确的参数为host port threadcount");
             System.exit(-1);
         }
         int remotePort =       Integer.parseInt(args[1]);
         int threadCount =      Integer.parseInt(args[2]);
+
         for(int i=0;i<threadCount;i++){
         Client client = new Client(args[0],remotePort,threadCount);
             System.out.println("start thread:"+i+" ...");

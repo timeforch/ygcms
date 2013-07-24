@@ -1,4 +1,10 @@
 Cms::Application.routes.draw do
+  resources :actions
+
+
+  resources :roles
+
+
   get "index/index"
 
   resources :users

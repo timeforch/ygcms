@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613092148) do
+ActiveRecord::Schema.define(:version => 20130724075443) do
+
+  create_table "actions", :force => true do |t|
+    t.string   "url"
+    t.string   "action_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.string   "sid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "settings", :force => true do |t|
     t.string   "var",                      :null => false
@@ -23,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20130613092148) do
   end
 
   add_index "settings", ["thing_type", "thing_id", "var"], :name => "index_settings_on_thing_type_and_thing_id_and_var", :unique => true
+
+  create_table "user_roles", :force => true do |t|
+    t.string   "user_id"
+    t.string   "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login_name",   :limit => 20,                    :null => false

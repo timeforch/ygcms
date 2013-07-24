@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  menu_id: MyString
+  oper_id: MyString
+
+two:
+  menu_id: MyString
+  oper_id: MyString

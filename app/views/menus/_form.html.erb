@@ -1,0 +1,37 @@
+<%= form_for(@menu) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sid %><br />
+    <%= f.text_field :sid %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_path %><br />
+    <%= f.text_field :parent_path %>
+  </div>
+  <div class="field">
+    <%= f.label :click_url %><br />
+    <%= f.text_field :click_url %>
+  </div>
+  <div class="field">
+    <%= f.label :display %><br />
+    <%= f.check_box :display %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

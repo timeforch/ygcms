@@ -1,5 +1,8 @@
 Cms::Application.routes.draw do
-  resources :actions
+  resources :operations
+
+
+  resources :menus
 
 
   resources :roles

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sid:</b>
+  <%= @operation.sid %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @operation.url %>
+</p>
+
+<p>
+  <b>Action name:</b>
+  <%= @operation.action_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_operation_path(@operation) %> |
+<%= link_to 'Back', operations_path %>

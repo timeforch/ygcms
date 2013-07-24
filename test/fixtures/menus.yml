@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sid: MyString
+  name: MyString
+  parent_path: MyString
+  click_url: MyString
+  display: false
+
+two:
+  sid: MyString
+  name: MyString
+  parent_path: MyString
+  click_url: MyString
+  display: false

@@ -12,7 +12,7 @@ Ext.define('CMS.controller.Users', {
     ],
     init: function () {
         this.control({
-            'viewport > userlist': {
+            '#user-list-win > userlist': {
                 itemdblclick: this.editUser
             },
             'userlist button[action=addNew]':{

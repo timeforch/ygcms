@@ -4,7 +4,8 @@ Ext.define('CMS.view.user.List',{
     title:'用户列表',
     store:"Users",
     multiSelect: true,
-    collapsible:true,
+    collapsible:false,
+    id:'user-list',
 
     initComponent:function(){
         this.columns =[
@@ -36,10 +37,12 @@ Ext.define('CMS.view.user.List',{
 
         this.tbar = [{
             text: '添加新用户',
-            action: 'addNew'
+            action: 'addNew',
+        iconCls:'add'
         },{
             text: '删除',
-            action: 'delete'
+            action: 'delete',
+        iconCls:'remove'
         },this.geCommodityButton];
         this.callParent(arguments);
     }

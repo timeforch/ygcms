@@ -11,13 +11,15 @@ Ext.define('CMS.view.demo.BogusMenuModule', {
     init : function() {
 
         this.launcher = {
-            text: 'More items',
+            text: '例子程序',
             iconCls: 'bogus',
             handler: function() {
                 return false;
             },
             menu: {
-                items: []
+                items: [
+
+                ]
             }
         };
 

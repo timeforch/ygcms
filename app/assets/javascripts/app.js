@@ -1,6 +1,3 @@
-/**
- *= require_self
- */
 Ext.Loader.setPath({
     'Ext.ux.desktop': '/assets/app/view/desktop'
 });

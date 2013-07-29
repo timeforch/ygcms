@@ -9,9 +9,13 @@ Ext.define('CMS.view.CmsDesktop', {
     extend: 'Ext.ux.desktop.App',
 
     requires: [
+
         'Ext.window.MessageBox',
 
         'Ext.ux.desktop.ShortcutModel',
+        //===========split ============
+
+        'CMS.view.user.UserListWindow',
 
         'CMS.view.demo.SystemStatus',
         'CMS.view.demo.VideoWindow',
@@ -21,6 +25,7 @@ Ext.define('CMS.view.CmsDesktop', {
         'CMS.view.demo.Notepad',
         'CMS.view.demo.BogusMenuModule',
         'CMS.view.demo.BogusModule',
+
 
 //        'CMS.view.demo.Blockalanche',
         'CMS.view.demo.Settings'
@@ -36,6 +41,8 @@ Ext.define('CMS.view.CmsDesktop', {
 
     getModules : function(){
         return [
+            new CMS.view.user.UserListWindow(),
+            //===========上面是系统用到的，下面是例子
             new CMS.view.demo.VideoWindow(),
 //            new CMS.view.demo.Blockalanche(),
             new CMS.view.demo.SystemStatus(),
@@ -61,6 +68,8 @@ Ext.define('CMS.view.CmsDesktop', {
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'Ext.ux.desktop.ShortcutModel',
                 data: [
+                    { name: '用户管理', iconCls: 'accordion-shortcut', module: 'user-list-win' },
+                    //==============split=============================
                     { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
                       { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
                       { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },

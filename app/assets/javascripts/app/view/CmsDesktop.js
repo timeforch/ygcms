@@ -11,7 +11,7 @@ Ext.define('CMS.view.CmsDesktop', {
     requires: [
         'Ext.window.MessageBox',
 
-        'Ext.ux.desktop.ShortcutModel'//,
+        'Ext.ux.desktop.ShortcutModel',
 
         'CMS.view.demo.SystemStatus',
         'CMS.view.demo.VideoWindow',
@@ -61,10 +61,10 @@ Ext.define('CMS.view.CmsDesktop', {
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'Ext.ux.desktop.ShortcutModel',
                 data: [
-                  //  { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
-                    //  { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
-                    //  { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
-                    //  { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
+                    { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
+                      { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
+                      { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
+                      { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
                 ]
             }),
 
@@ -107,8 +107,8 @@ Ext.define('CMS.view.CmsDesktop', {
 
         return Ext.apply(ret, {
             quickStart: [
-               // { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
-               // { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
+               { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
+               { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
             ],
             trayItems: [
                 { xtype: 'trayclock', flex: 1 }

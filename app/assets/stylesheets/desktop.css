@@ -25,7 +25,7 @@
     position: relative;
     width: 150px;
     height: 25px;
-    background-image: url(/assets/images/powered-by-ext-js.png);
+    background-image: url(/assets/powered-by-ext-js.png);
     background-repeat: no-repeat;
 }
 
@@ -42,7 +42,7 @@
 */
 
 .ux-start-button-icon {
-    background-image: url(/assets/images/taskbar/sencha.gif) !important;
+    background-image: url(/assets/taskbar/sencha.gif) !important;
     background-color: transparent;
 }
 
@@ -113,13 +113,13 @@ div.ux-taskbar div.x-toolbar {
 */
 
 .ux-desktop-black .ux-taskbar {
-    background: transparent url('/assets/images/taskbar/black/taskbar-start-panel-bg.gif') repeat-x left top;
+    background: transparent url('/assets/taskbar/black/taskbar-start-panel-bg.gif') repeat-x left top;
     border-color: transparent;
     /*height: 30px;*/
 }
 
 .ux-desktop-black .ux-taskbar .x-splitter {
-    background: transparent url(/assets/images/taskbar/black/taskbar-split-h.gif) no-repeat scroll 0 -2px;
+    background: transparent url(/assets/taskbar/black/taskbar-split-h.gif) no-repeat scroll 0 -2px;
 }
 
 .ux-desktop-black .ux-taskbar .x-toolbar-text {
@@ -193,19 +193,19 @@ div.ux-taskbar div.x-toolbar {
 */
 
 .accordion-shortcut {
-    background-image: url(/assets/images/im48x48.png);
+    background-image: url(/assets/im48x48.png);
 }
 
 .cpu-shortcut {
-    background-image: url(/assets/images/statusLarge.png);
+    background-image: url(/assets/statusLarge.png);
 }
 
 .grid-shortcut {
-    background-image: url(/assets/images/grid48x48.png);
+    background-image: url(/assets/grid48x48.png);
 }
 
 .notepad-shortcut {
-    background-image: url(/assets/images/notepadLarge.png);
+    background-image: url(/assets/notepadLarge.png);
     width: 46px;
     height: 46px;
 }
@@ -231,46 +231,46 @@ div.ux-taskbar div.x-toolbar {
 }
 
 .video {
-    background-image: url(/assets/images/gears.gif);
+    background-image: url(/assets/gears.gif);
 }
 
 .bogus {
-    background-image: url( /assets/images/bogus.png ) !important;
+    background-image: url(/assets/bogus.png ) !important;
 }
 
 .notepad {
-    background-image: url( /assets/images/bogus.png ) !important;
+    background-image: url(/assets/bogus.png ) !important;
 }
 
 .logout {
-    background-image: url( /assets/images/logout.gif ) !important;
+    background-image: url(/assets/logout.gif ) !important;
 }
 
 .settings {
-    background-image: url( /assets/images/gears.gif ) !important;
+    background-image: url(/assets/gears.gif ) !important;
 }
 
 
 .icon-grid {
-    background-image:url( /assets/images/grid.png ) !important;
+    background-image:url(/assets/grid.png ) !important;
 }
 .add {
-    background-image:url(/assets/images/icons/fam/add.gif) !important;
+    background-image:url(/assets/icons/fam/add.gif) !important;
 }
 .option {
-    background-image:url(/assets/images/icons/fam/plugin.gif) !important;
+    background-image:url(/assets/icons/fam/plugin.gif) !important;
 }
 .remove {
-    background-image:url(/assets/images/icons/fam/delete.gif) !important;
+    background-image:url(/assets/icons/fam/delete.gif) !important;
 }
 .save {
-    background-image:url(/assets/images/icons/save.gif) !important;
+    background-image:url(/assets/icons/save.gif) !important;
 }
 .accordion {
-    background-image:url(/assets/images/accordian.gif) !important;
+    background-image:url(/assets/accordian.gif) !important;
 }
 .tabs {
-    background-image:url(/assets/images/tabs.gif) !important;
+    background-image:url(/assets/tabs.gif) !important;
 }
 
 /*----------------------------------------------------
@@ -278,29 +278,29 @@ div.ux-taskbar div.x-toolbar {
 */
 
 .user {
-    background-image:url( /assets/images/icons/fam/user.gif ) !important;
+    background-image:url(/assets/icons/fam/user.gif ) !important;
 }
 
 .user-add {
-    background-image:url(/assets/images/icons/fam/user_add.gif) !important;
+    background-image:url(/assets/icons/fam/user_add.gif) !important;
 }
 
 .user-delete {
-    background-image:url(/assets/images/icons/fam/user_delete.gif) !important;
+    background-image:url(/assets/icons/fam/user_delete.gif) !important;
 }
 
 .connect {
-    background-image:url(/assets/images/icons/fam/connect.gif) !important;
+    background-image:url(/assets/icons/fam/connect.gif) !important;
 }
 
 .user-girl {
-    background-image:url(/assets/images/icons/fam/user_female.gif) !important;
+    background-image:url(/assets/icons/fam/user_female.gif) !important;
 }
 
 .user-kid {
-    background-image:url(/assets/images/icons/fam/user_green.gif) !important;
+    background-image:url(/assets/icons/fam/user_green.gif) !important;
 }
 
 .user-suit {
-    background-image:url(/assets/images/icons/fam/user_suit.gif) !important;
+    background-image:url(/assets/icons/fam/user_suit.gif) !important;
 }

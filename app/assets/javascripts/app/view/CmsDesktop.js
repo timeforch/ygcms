@@ -13,17 +13,17 @@ Ext.define('CMS.view.CmsDesktop', {
 
         'Ext.ux.desktop.ShortcutModel',
 
-//        'MyDesktop.SystemStatus',
-//        'MyDesktop.VideoWindow',
-//        'MyDesktop.GridWindow',
-//        'MyDesktop.TabWindow',
-//        'MyDesktop.AccordionWindow',
-//        'MyDesktop.Notepad',
-//        'MyDesktop.BogusMenuModule',
-//        'MyDesktop.BogusModule',
+        'CMS.view.demo.SystemStatus',
+        'CMS.view.demo.VideoWindow',
+        'CMS.view.demo.GridWindow',
+        'CMS.view.demo.TabWindow',
+        'CMS.view.demo.AccordionWindow',
+        'CMS.view.demo.Notepad',
+        'CMS.view.demo.BogusMenuModule',
+        'CMS.view.demo.BogusModule',
 
-//        'MyDesktop.Blockalanche',
-//        'MyDesktop.Settings'
+//        'CMS.view.demo.Blockalanche',
+        'CMS.view.demo.Settings'
     ],
 
     init: function() {
@@ -36,15 +36,15 @@ Ext.define('CMS.view.CmsDesktop', {
 
     getModules : function(){
         return [
-//            new MyDesktop.VideoWindow(),
-////            new MyDesktop.Blockalanche(),
-//            new MyDesktop.SystemStatus(),
-//            new MyDesktop.GridWindow(),
-//            new MyDesktop.TabWindow(),
-//            new MyDesktop.AccordionWindow(),
-//            new MyDesktop.Notepad(),
-//            new MyDesktop.BogusMenuModule(),
-//            new MyDesktop.BogusModule()
+            new CMS.view.demo.VideoWindow(),
+//            new CMS.view.demo.Blockalanche(),
+            new CMS.view.demo.SystemStatus(),
+            new CMS.view.demo.GridWindow(),
+            new CMS.view.demo.TabWindow(),
+            new CMS.view.demo.AccordionWindow(),
+            new CMS.view.demo.Notepad(),
+            new CMS.view.demo.BogusMenuModule(),
+            new CMS.view.demo.BogusModule()
         ];
     },
 
@@ -121,7 +121,7 @@ Ext.define('CMS.view.CmsDesktop', {
     },
 
     onSettings: function () {
-        var dlg = new MyDesktop.Settings({
+        var dlg = new CMS.view.demo.Settings({
             desktop: this.desktop
         });
         dlg.show();

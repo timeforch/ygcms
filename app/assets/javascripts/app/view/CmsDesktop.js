@@ -11,7 +11,7 @@ Ext.define('CMS.view.CmsDesktop', {
     requires: [
         'Ext.window.MessageBox',
 
-        'Ext.ux.desktop.ShortcutModel',
+        'Ext.ux.desktop.ShortcutModel'//,
 
 //        'MyDesktop.SystemStatus',
 //        'MyDesktop.VideoWindow',
@@ -61,10 +61,10 @@ Ext.define('CMS.view.CmsDesktop', {
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'Ext.ux.desktop.ShortcutModel',
                 data: [
-                    { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
-                    { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
-                    { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
-                    { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
+                  //  { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
+                    //  { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
+                    //  { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
+                    //  { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
                 ]
             }),
 
@@ -78,21 +78,21 @@ Ext.define('CMS.view.CmsDesktop', {
         var me = this, ret = me.callParent();
 
         return Ext.apply(ret, {
-            title: 'Don Griffin',
+            title: '系统菜单',
             iconCls: 'user',
             height: 300,
             toolConfig: {
                 width: 100,
                 items: [
                     {
-                        text:'Settings',
+                        text:'设置',
                         iconCls:'settings',
                         handler: me.onSettings,
                         scope: me
                     },
                     '-',
                     {
-                        text:'Logout',
+                        text:'注销',
                         iconCls:'logout',
                         handler: me.onLogout,
                         scope: me
@@ -107,17 +107,18 @@ Ext.define('CMS.view.CmsDesktop', {
 
         return Ext.apply(ret, {
             quickStart: [
-                { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
-                { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
+               // { name: 'Accordion Window', iconCls: 'accordion', module: 'acc-win' },
+               // { name: 'Grid Window', iconCls: 'icon-grid', module: 'grid-win' }
             ],
             trayItems: [
                 { xtype: 'trayclock', flex: 1 }
-            ]
+            ],
+            startBtnText:"开始"
         });
     },
 
     onLogout: function () {
-        Ext.Msg.confirm('Logout', 'Are you sure you want to logout?');
+        Ext.Msg.confirm('注销', '你确定要退出系统吗?');
     },
 
     onSettings: function () {

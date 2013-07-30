@@ -38,8 +38,8 @@ Ext.define('CMS.controller.Users', {
         }
         var allSelected = selModel.getSelection()  ; //获取最后一个选择的一行的数据
         allSelected.forEach(function(element, index, array){
-            store.remove(element);     store.sync();
-
+            store.remove(element);
+            store.sync();
             //alert(element.get('id') +"->"+element.get('user_name'))
         });
 
@@ -53,7 +53,6 @@ Ext.define('CMS.controller.Users', {
         view.down('form').loadRecord(record);
     },
     updateUser: function(button) {
-        console.log('click')
         var win    = button.up('window'),
             form   = win.down('form'),
             record = form.getRecord(),
@@ -66,8 +65,9 @@ Ext.define('CMS.controller.Users', {
             var user = Ext.create('CMS.model.User', values);
             store.add(user);
         }
-        win.close();
         store.sync();
+        store.load();
+        win.close();
     }
 });
 

@@ -8,11 +8,11 @@ class CmsApiService
 
   def getAllUsers
      user_service  = UsersService.new
-    return convert_model_to_vo("UserVo",user_service.get_users)
+    return convert_model_to_vo("UserVo",user_service.get_users(1,getUserCount))
   end
 
   def getUserCount
-    return 20
+    return user_service.get_count
   end
 
 

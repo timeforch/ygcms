@@ -7,8 +7,16 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     user_service = UsersService.new
-    @users = user_service.get_users
-    respond_with(@users) do |format|
+    page_no = params[:page]
+    page_no ||= 1
+    page_size = params[:limit]
+    page_size ||= 20
+    @users = user_service.get_users(page_no,page_size)
+    @paginate={}
+    @paginate[:data] = @users
+    total_count =  user_service.get_count
+    @paginate[:total] = total_count
+    respond_with(@paginate) do |format|
       format.html # index.html.erb
       format.json
     end

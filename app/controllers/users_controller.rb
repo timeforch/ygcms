@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @paginate[:data] = @users
     total_count =  user_service.get_count
     @paginate[:total] = total_count
+    @paginate[:success]= true
     respond_with(@paginate) do |format|
       format.html # index.html.erb
       format.json

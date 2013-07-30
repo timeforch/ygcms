@@ -1,5 +1,5 @@
-#source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
+#source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
  
@@ -39,7 +39,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

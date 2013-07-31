@@ -1,20 +1,17 @@
 Ext.define('CMS.controller.Users', {
     extend: 'Ext.app.Controller',
     stores:[
-        'Users'
+        'CMS.store.Users'
     ],
     models:[
-        'User'
+        'CMS.model.User'
     ],
     views:[
-        'user.List',
-        'user.Form'
+        'CMS.view.user.List',
+        'CMS.view.user.Form'
     ],
     init: function () {
         this.control({
-            '#user-list-win > userlist': {
-                itemdblclick: this.editUser
-            },
             'userlist button[action=addNew]':{
                 click:this.addUser
             } ,
@@ -28,7 +25,7 @@ Ext.define('CMS.controller.Users', {
     },
     deleteUsers:function(button){
         var store = this.getUsersStore();
-         var grid = button.up('panel');
+        var grid = button.up('panel');
         var selModel = grid.getSelectionModel() ;
         var isGridSelected = selModel.hasSelection()
         if (!isGridSelected) { //没有被选中

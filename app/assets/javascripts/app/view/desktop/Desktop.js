@@ -191,12 +191,28 @@ Ext.define('Ext.ux.desktop.Desktop', {
     },
 
     onShortcutItemClick: function (dataView, record) {
-        var me = this, module = me.app.getModule(record.data.module),
-            win = module && module.createWindow();
+//        var me = this, module = me.app.getModule(record.data.module),
+//            win = module && module.createWindow();
 
-        if (win) {
-            me.restoreWindow(win);
-        }
+        var me = this,
+            moduleClassName = record.data.moduleClassName,
+            module = {},
+            win = {};
+        Ext.require(moduleClassName, function() {
+            Ext.require(record.data.controllerName, function() {
+                module = eval('new '+moduleClassName+'()');
+                module.app = me.app;
+//                application.addController(record.data.controllerName);
+                var con = application.getController(record.data.controllerName);
+                win = module && module.createWindow();
+                if (win) {
+                    me.restoreWindow(win);
+                }
+
+            });
+
+        });
+
     },
 
     onWindowClose: function(win) {

@@ -15,16 +15,16 @@ Ext.define('CMS.view.CmsDesktop', {
         'Ext.ux.desktop.ShortcutModel',
         //===========split ============
 
-        'CMS.view.user.UserListWindow',
+//        'CMS.view.user.UserListWindow',
 
-        'CMS.view.demo.SystemStatus',
-        'CMS.view.demo.VideoWindow',
+//        'CMS.view.demo.SystemStatus',
+//        'CMS.view.demo.VideoWindow',
         'CMS.view.demo.GridWindow',
-        'CMS.view.demo.TabWindow',
-        'CMS.view.demo.AccordionWindow',
-        'CMS.view.demo.Notepad',
-        'CMS.view.demo.BogusMenuModule',
-        'CMS.view.demo.BogusModule',
+//        'CMS.view.demo.TabWindow',
+//        'CMS.view.demo.AccordionWindow',
+//        'CMS.view.demo.Notepad',
+//        'CMS.view.demo.BogusMenuModule',
+//        'CMS.view.demo.BogusModule',
 
 
 //        'CMS.view.demo.Blockalanche',
@@ -41,17 +41,17 @@ Ext.define('CMS.view.CmsDesktop', {
 
     getModules : function(){
         return [
-            new CMS.view.user.UserListWindow(),
+//            new CMS.view.user.UserListWindow(),
             //===========上面是系统用到的，下面是例子
-            new CMS.view.demo.VideoWindow(),
-//            new CMS.view.demo.Blockalanche(),
-            new CMS.view.demo.SystemStatus(),
-            new CMS.view.demo.GridWindow(),
-            new CMS.view.demo.TabWindow(),
-            new CMS.view.demo.AccordionWindow(),
-            new CMS.view.demo.Notepad(),
-            new CMS.view.demo.BogusMenuModule(),
-            new CMS.view.demo.BogusModule()
+//            new CMS.view.demo.VideoWindow(),
+////            new CMS.view.demo.Blockalanche(),
+//            new CMS.view.demo.SystemStatus(),
+            new CMS.view.demo.GridWindow()
+//            new CMS.view.demo.TabWindow(),
+//            new CMS.view.demo.AccordionWindow(),
+//            new CMS.view.demo.Notepad(),
+//            new CMS.view.demo.BogusMenuModule(),
+//            new CMS.view.demo.BogusModule()
         ];
     },
 
@@ -68,12 +68,12 @@ Ext.define('CMS.view.CmsDesktop', {
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'Ext.ux.desktop.ShortcutModel',
                 data: [
-                    { name: '用户管理', iconCls: 'accordion-shortcut', module: 'user-list-win' },
+                    { name: '用户管理', iconCls: 'accordion-shortcut', module: 'user-list-win', moduleClassName: 'CMS.view.user.UserListWindow', controllerName: 'CMS.controller.Users'}
                     //==============split=============================
-                    { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
-                      { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
-                      { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
-                      { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
+//                    { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win', moduleClassName: '', controllerName: '' }
+//                      { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win', moduleClassName: '', controllerName: '' },
+//                      { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad', moduleClassName: '', controllerName: '' },
+//                      { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus', moduleClassName: '', controllerName: '' }
                 ]
             }),
 

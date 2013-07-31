@@ -13,6 +13,8 @@
 Ext.define('Ext.ux.desktop.ShortcutModel', {
     extend: 'Ext.data.Model',
     fields: [
+       { name: 'moduleClassName' },
+       { name: 'controllerName' },
        { name: 'name' },
        { name: 'iconCls' },
        { name: 'module' }

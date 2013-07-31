@@ -6,4 +6,6 @@ class Role < ActiveRecord::Base
   validates :name,presence: {message:"角色名称不能为空"}
   has_many :user_roles
   has_many :users, through: :user_roles
+  has_many :role_menus
+  has_many :menus, through: :role_menus
 end

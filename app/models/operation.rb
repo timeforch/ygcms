@@ -5,4 +5,5 @@ class Operation < ActiveRecord::Base
   validates :sid,presence:{message:"主键不能为空！"}
   validates :action_name,length: {minimum: 2,maximum: 32,message:"操作名称应大于2个字符，小于30个字符"}
   validates :url,presence: {message:"url不能为空"}
+  belongs_to :menu
 end

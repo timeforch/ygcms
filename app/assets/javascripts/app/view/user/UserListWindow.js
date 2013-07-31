@@ -4,7 +4,8 @@ Ext.define('CMS.view.user.UserListWindow', {
         'Ext.data.ArrayStore',
         'Ext.util.Format',
         'Ext.grid.Panel',
-        'Ext.grid.RowNumberer'
+        'Ext.grid.RowNumberer',
+        'CMS.view.user.RoleList'
     ],
     id:'user-list-win',
     init : function(){
@@ -22,14 +23,19 @@ Ext.define('CMS.view.user.UserListWindow', {
                 id: 'user-list-win',
                 title:'用户管理',
                 width:740,
-                height:480,
+                height:580,
                 iconCls: 'accordion',
                 animCollapse:false,
                 constrainHeader:true,
-                layout: 'fit',
+                layout: 'form',
                 items: [
                     {
                         xtype: 'userlist'
+                    },
+                    {
+                        xtype: 'userrolelist',
+                        hidden: true,
+                        height: 200
                     }
                 ]
             });

@@ -5,6 +5,7 @@ Ext.define('CMS.store.Users', {
     model: 'CMS.model.User',
     autoLoad: true,
     autoSync: false,
+    pageSize: 20,
 
     proxy: {
         url: '/users',
@@ -12,8 +13,9 @@ Ext.define('CMS.store.Users', {
         format: 'json',
 
         reader: {
-            root: 'users',
+            root: 'data',
             record: 'user',
+            totalProperty: 'total',
             successProperty: 'success',
             messageProperty: 'errors'
         },

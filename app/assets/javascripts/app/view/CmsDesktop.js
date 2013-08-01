@@ -55,6 +55,13 @@ Ext.define('CMS.view.CmsDesktop', {
         ];
     },
 
+    getStartMenus : function() {
+        return [
+            {moduleClassName: 'CMS.view.user.UserListWindow', controllerName: 'CMS.controller.Users', launcher: {text: 'User List', iconCls:'icon-grid'}},
+            {moduleClassName: 'CMS.view.demo.GridWindow', controllerName: '', launcher: {text: 'Grid window', iconCls:'icon-grid'}}
+        ]
+    },
+
     getDesktopConfig: function () {
         var me = this, ret = me.callParent();
 

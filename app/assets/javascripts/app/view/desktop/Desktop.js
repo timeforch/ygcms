@@ -239,7 +239,7 @@ Ext.define('Ext.ux.desktop.Desktop', {
     },
 
     onWindowMenuHide: function (menu) {
-        menu.theWin = null;
+        //menu.theWin = null;
     },
 
     onWindowMenuMaximize: function () {

@@ -18,6 +18,7 @@ Ext.define('Ext.ux.desktop.App', {
 
     isReady: false,
     modules: null,
+    startMenus: null,
     useQuickTips: true,
 
     constructor: function (config) {
@@ -47,6 +48,7 @@ Ext.define('Ext.ux.desktop.App', {
         if (me.modules) {
             me.initModules(me.modules);
         }
+        me.startMenus = me.getStartMenus();
 
         desktopCfg = me.getDesktopConfig();
         me.desktop = new Ext.ux.desktop.Desktop(desktopCfg);
@@ -79,6 +81,8 @@ Ext.define('Ext.ux.desktop.App', {
 
     getModules: Ext.emptyFn,
 
+    getStartMenus: Ext.emptyFn,
+
     /**
      * This method returns the configuration object for the Start Button. A derived
      * class can override this method, call the base version to build the config and
@@ -94,20 +98,43 @@ Ext.define('Ext.ux.desktop.App', {
 
         Ext.apply(cfg, me.startConfig);
 
-        Ext.each(me.modules, function (module) {
-            launcher = module.launcher;
+        Ext.each(me.startMenus, function(startmenu) {
+            launcher = startmenu.launcher;
             if (launcher) {
-                launcher.handler = launcher.handler || Ext.bind(me.createWindow, me, [module]);
-                cfg.menu.push(module.launcher);
+                launcher.handler = launcher.handler || Ext.bind(me.createWindow, me, [startmenu]);
+                cfg.menu.push(startmenu.launcher);
             }
         });
+
+//        Ext.each(me.modules, function (module) {
+//            launcher = module.launcher;
+//            if (launcher) {
+//                launcher.handler = launcher.handler || Ext.bind(me.createWindow, me, [module]);
+//                cfg.menu.push(module.launcher);
+//            }
+//        });
 
         return cfg;
     },
 
-    createWindow: function(module) {
-        var window = module.createWindow();
-        window.show();
+    createWindow: function(startmenu) {
+        var me = this;
+        if(!Ext.isEmpty(startmenu.moduleClassName)) {
+            Ext.require(startmenu.moduleClassName, function() {
+                var module = eval('new '+startmenu.moduleClassName+'()');
+                module.app = me;
+                if(!Ext.isEmpty(startmenu.controllerName)) {
+                    Ext.require(startmenu.controllerName, function() {
+                        var con = application.getController(startmenu.controllerName);
+                        var window = module.createWindow();
+                        window.show();
+                    });
+                } else {
+                    var window = module.createWindow();
+                    window.show();
+                }
+            });
+        }
     },
 
     /**

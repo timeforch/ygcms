@@ -196,8 +196,8 @@ Ext.define('Ext.ux.desktop.Desktop', {
 
         var me = this,
             moduleClassName = record.data.moduleClassName,
-            module = {},
-            win = {};
+            module = null,
+            win = null;
         Ext.require(moduleClassName, function() {
             Ext.require(record.data.controllerName, function() {
                 module = eval('new '+moduleClassName+'()');

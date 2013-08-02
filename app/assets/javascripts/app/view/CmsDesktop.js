@@ -46,7 +46,7 @@ Ext.define('CMS.view.CmsDesktop', {
 //            new CMS.view.demo.VideoWindow(),
 ////            new CMS.view.demo.Blockalanche(),
 //            new CMS.view.demo.SystemStatus(),
-            new CMS.view.demo.GridWindow()
+//            new CMS.view.demo.GridWindow()
 //            new CMS.view.demo.TabWindow(),
 //            new CMS.view.demo.AccordionWindow(),
 //            new CMS.view.demo.Notepad(),
@@ -69,7 +69,7 @@ Ext.define('CMS.view.CmsDesktop', {
             //cls: 'ux-desktop-black',
 
             contextMenuItems: [
-                { text: 'Change Settings', handler: me.onSettings, scope: me }
+//                { text: 'Change Settings', handler: me.onSettings, scope: me }
             ],
 
             shortcuts: Ext.create('Ext.data.Store', {
@@ -100,19 +100,19 @@ Ext.define('CMS.view.CmsDesktop', {
             toolConfig: {
                 width: 100,
                 items: [
-                    {
-                        text:'设置',
-                        iconCls:'settings',
-                        handler: me.onSettings,
-                        scope: me
-                    },
-                    '-',
-                    {
-                        text:'注销',
-                        iconCls:'logout',
-                        handler: me.onLogout,
-                        scope: me
-                    }
+//                    {
+//                        text:'设置',
+//                        iconCls:'settings',
+//                        handler: me.onSettings,
+//                        scope: me
+//                    },
+//                    '-',
+//                    {
+//                        text:'注销',
+//                        iconCls:'logout',
+//                        handler: me.onLogout,
+//                        scope: me
+//                    }
                 ]
             }
         });

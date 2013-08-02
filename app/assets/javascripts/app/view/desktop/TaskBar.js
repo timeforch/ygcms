@@ -52,7 +52,7 @@ Ext.define('Ext.ux.desktop.TaskBar', {
                 menuAlign: 'bl-tl',
                 text: me.startBtnText
             },
-            me.quickStart,
+//            me.quickStart,
             {
                 xtype: 'splitter', html: '&#160;',
                 height: 14, width: 2, // TODO - there should be a CSS way here

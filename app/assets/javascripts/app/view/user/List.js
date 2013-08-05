@@ -1,6 +1,8 @@
-function showInfo(rid) {
+function showInfo(rid, rname) {
     console.log(rid);
-    Ext.getCmp('user-rolelist').show();
+    console.log(rname);
+    var role = Ext.getCmp('user-rolelist');
+    role.setTitle(rname+'-角色列表');
 }
 Ext.define('CMS.view.user.List',{
     extend: 'Ext.grid.Panel',
@@ -39,7 +41,7 @@ Ext.define('CMS.view.user.List',{
                 header: 'operation',
                 dataIndex: '',
                 renderer: function(value, meta, record, rowIndex, colIndex, store, view) {
-                    return '<a href="#" onclick="showInfo('+record.get('id')+')">Info</a>'
+                    return '<a href="#" onclick="showInfo('+record.get('id')+',"'+record.get('user_name')+'")">Info</a>'
                 }
             }
         ];

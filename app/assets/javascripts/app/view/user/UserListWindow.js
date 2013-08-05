@@ -27,13 +27,17 @@ Ext.define('CMS.view.user.UserListWindow', {
                 iconCls: 'accordion',
                 animCollapse:false,
                 constrainHeader:true,
-                layout: 'form',
+                layout: 'border',
                 items: [
                     {
-                        xtype: 'userlist'
+                        xtype: 'userlist',
+                        region: 'center'
                     },
                     {
                         xtype: 'userrolelist',
+                        region: 'south',
+                        closable: true,
+                        closeAction: 'hide',
                         hidden: true,
                         height: 200
                     }

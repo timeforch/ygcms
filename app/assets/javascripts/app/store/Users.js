@@ -29,10 +29,11 @@ Ext.define('CMS.store.Users', {
 
     listeners: {
         load: function() {
-            console.log(arguments);
+//            console.log(arguments);
         },
-        update: function() {
+        update: function(store) {
             console.log(arguments);
+            store.sync();
         },
         beforesync: function() {
            alert('ok')

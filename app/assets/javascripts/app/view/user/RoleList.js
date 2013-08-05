@@ -30,11 +30,11 @@ Ext.define('CMS.view.user.RoleList', {
         ];
 
         this.tbar = [{
-            text: '添加新用户',
+            text: '添加角色',
             action: 'addNew',
             iconCls:'add'
         },{
-            text: '删除',
+            text: '删除角色',
             action: 'delete',
             iconCls:'remove'
         }];
